@@ -1,7 +1,19 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<script>
+	import Video from '../components/video.svelte';
 
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.gray.100);
-	}
+	export let data;
+
+	const videos = data.item;
+</script>
+
+<div class=" grid grid-cols-footer ">
+	<div class="">HI</div>
+	<div class=" p-2 grid grid-cols-4 gap-2 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+		{#each videos as video}
+			<Video {video} />
+		{/each}
+	</div>
+</div>
+
+<style>
 </style>
