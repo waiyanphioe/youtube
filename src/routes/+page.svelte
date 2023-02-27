@@ -3,7 +3,7 @@
 
 	export let data;
 
-	const videos = data.item;
+	const videos = data.item.items;
 </script>
 
 <div class=" grid grid-cols-footer ">

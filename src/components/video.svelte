@@ -3,8 +3,10 @@
 </script>
 
 <div class="m-2">
-	<a href={`/watch?v=${video.id}`}><img src={video.img} alt={video.title} class=" rounded-md" /></a>
+	<a href={`/watch?v=${video.id.videoId}`}
+		><img src={video.snippet.thumbnails.medium.url} alt={video.title} class=" rounded-md" /></a
+	>
 	<div>
-		<h1>{video.title}</h1>
+		<h1>{video.snippet.title}</h1>
 	</div>
 </div>

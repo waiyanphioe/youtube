@@ -1,20 +1,10 @@
 export async function load({ fetch, params, url }) {
-	let v = url.searchParams.get('v');
-	const data = { url: `https://www.youtube.com/watch?v=${v}` };
+	let id = url.searchParams.get('v');
 
-	const response = await fetch('https://ssyoutube.com/api/convert', {
-		method: 'POST',
-		mode: 'cors',
-		cache: 'no-cache',
-		credentials: 'same-origin',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		redirect: 'follow',
-		referrerPolicy: 'no-referrer',
-		body: JSON.stringify(data)
-	});
-	const item = response.json();
+	const res = await fetch(
+		`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${id}&key=AIzaSyDhLvl0Enr6w_2RkxnvjnsLDOubBWndUHs`
+	);
+	const item = await res.json();
 
 	return { item };
 }
